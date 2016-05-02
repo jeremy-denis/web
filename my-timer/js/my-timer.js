@@ -2,7 +2,7 @@
  angular.module('myTimer')
 	.directive('myTimer', myTimer);
 	
-angular.module('directive')
+angular.module('myTimer')
 	.controller('timerController',timerController);
 	
 	
@@ -15,7 +15,10 @@ function timerController($interval,$scope) {
 	}
 	
 	this.init = function() {
-		this.timer = $interval(this.stepTime, 1000);
+		if ($scope.duration == undefined) {
+			$scope.duration = 1000;
+		}
+		this.timer = $interval(this.stepTime, $scope.duration);
 	}
 	
 	this.init();
@@ -24,9 +27,12 @@ function timerController($interval,$scope) {
 function myTimer($interval) {
 	return {
 		replace:true,
-		scope: true,
+		scope: {
+            duration: "@duration"
+        },
 		controller: 'timerController',
 		controllerAs: 'ctrl',
 		template:'<div>{{ctrl.number}}{{1+1+1}}</div>',
 	}
 }
+
