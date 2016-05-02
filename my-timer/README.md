@@ -6,8 +6,18 @@ The main functionalities are the following :
 
 ## Usage
 
+### Element directive
+
 ```html
  <my-timer></my-timer>
+```
+
+### attributes available
+
+duration : the duration before an incrementation of the value in the timer
+
+```html
+ <my-timer duration="500"></my-timer>
 ```
 
 ## License
