@@ -1,8 +1,10 @@
 # web/my-timer
-Angular directive 
+Angular Timer directive 
 
 The main functionalities are the following :
  * possibilities to have a number timer
+ * select the duratio between to step
+ * choose the min max value of the timer
 
 ## Usage
 
