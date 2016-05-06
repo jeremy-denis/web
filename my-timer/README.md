@@ -1,5 +1,6 @@
 # web/my-timer
-Angular Timer directive 
+Angular Timer directive.
+Tht my-timer directive allow you to manipulate the time in a very easy way.
 
 The main functionalities are the following :
  * possibilities to have a number timer
@@ -19,6 +20,7 @@ The main functionalities are the following :
 duration : the duration before an incrementation of the value in the timer
 min      : the minimum value to start the timer
 max      : the maximum value of the timer. When the value is reach the timer is stop
+step     : the value that will be add to the timer at each step
 
 #### duration sample 
 
