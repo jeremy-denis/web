@@ -22,6 +22,7 @@ function timerController($interval,$scope) {
 	var vm = this;
 	vm.number = 0;
 	vm.timer;
+	vm.step = 1;
 	vm.max;
 	
 	vm.stop = function () {
@@ -29,9 +30,11 @@ function timerController($interval,$scope) {
 	}
 	
 	this.stepTime = function ($scope) {
-		vm.number += 1;
+		vm.number += vm.step;
 
-		if (vm.max != undefined && vm.max == vm.number) {
+		if (vm.max != undefined && vm.max <= vm.number) {
+			//if the max value is specify the last value display by the timer should be the max
+			vm.number = vm.max;
 			vm.stop();
 		}
 	}
@@ -49,6 +52,10 @@ function timerController($interval,$scope) {
 			vm.number = $scope.min;
 		}
 		
+		if ($scope.step != undefined) {
+			vm.step = $scope.step;
+		}
+
 		this.timer = $interval(this.stepTime, $scope.duration);
 		
 		$scope.$on('$destroy', function() {
@@ -58,7 +65,10 @@ function timerController($interval,$scope) {
 	
 	this.init();
 }
-	
+
+/** The following function match to the timer directive itself 
+ * @constructor
+ */	
 function myTimer($interval) {
 	return {
 		replace:true,
@@ -66,6 +76,7 @@ function myTimer($interval) {
             duration: "@duration",
             min: "=min",
             max: "=max",
+	    step: "=step"
         },
 		controller: 'timerController',
 		controllerAs: 'ctrl',
