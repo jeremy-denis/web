@@ -21,6 +21,7 @@ duration : the duration before an incrementation of the value in the timer
 min      : the minimum value to start the timer
 max      : the maximum value of the timer. When the value is reach the timer is stop
 step     : the value that will be add to the timer at each step
+desc     : if the desc attributes is equal to true it will doing a reversing timer from the max to the minuimum value
 
 #### duration sample 
 
