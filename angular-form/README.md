@@ -11,6 +11,8 @@ The main functionalities are the following :
 ```html
  <angular-form></angular-formr>
 ```
+for each attributes object it will generate an input with the key as name of the input
+If the attributes is an array it will generate a select
 
 ### attributes available
 
