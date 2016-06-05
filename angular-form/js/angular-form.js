@@ -20,7 +20,7 @@ function angularFormController($scope,$sce) {
 	
 	this.init = function() {
 		vm.form = '<table>'
-		angular.forEach($scope.object, function(value, key) {
+		angular.forEach(vm.object, function(value, key) {
 		  vm.form += '<tr><td>'+key+' : </td>';
 		  if (typeof value == 'string' || !value instanceof Array) {
 				vm.form += '<td><input name="'+key+'" type="text" value="'+value+'"/></td></tr>';
@@ -46,10 +46,11 @@ function angularForm() {
 		replace:true,
 		restrict:'E',
 		scope: {
-            object: "=object"
+            object: "="
         },
 		controller: 'angularFormController',
 		controllerAs: 'ctrl',
+		bindToController:true,
 		template:'<div ng-bind-html="ctrl.form"></div>',
 	}
 }
