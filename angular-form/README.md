@@ -18,7 +18,7 @@ The main functionalities are the following :
 
 object : the object pass to the directive to generate the form
 
-#### duration sample 
+#### form usage sample by passing an object
 
 ```html
  <angular-form object="ctrl.obj"></my-timer>
