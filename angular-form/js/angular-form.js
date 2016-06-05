@@ -1,4 +1,4 @@
-/** Timer directive
+/** angular form directive
  * @file 06/05/2016
  * @author Jérémy DENIS
  * @descrition
