@@ -46,32 +46,22 @@ function timerController($interval,$scope) {
 	}
 	
 	this.init = function() {
-		if ($scope.duration == undefined) {
-			$scope.duration = 1000;
+		if (vm.duration == undefined) {
+			vm.duration = 1000;
 		}
 		
-		if ($scope.max != undefined) {
-			vm.max = $scope.max;
+		if (vm.min != undefined) {
+			vm.number = vm.min;
 		}
 		
-		if ($scope.min != undefined) {
-			vm.min = $scope.min;
-			vm.number = $scope.min;
-		}
-		
-		if ($scope.step != undefined) {
-			vm.step = $scope.step;
-		}
-		
-		if ($scope.desc) {
+		if (vm.desc) {
 			if (vm.max != undefined) {
 				vm.number = vm.max;
 			}
-			vm.desc = $scope.desc;
 			vm.step *= -1;
 		}
 
-		this.timer = $interval(this.stepTime, $scope.duration);
+		this.timer = $interval(this.stepTime, vm.duration);
 		
 		$scope.$on('$destroy', function() {
 		  $scope.stop();
@@ -89,13 +79,14 @@ function myTimer($interval) {
 		replace:true,
 		scope: {
             duration: "@duration",
-            min: "=min",
-            max: "=max",
-			step: "=step",
-			desc: "=desc"
+            min: "=",
+            max: "=",
+			step: "=",
+			desc: "="
         },
 		controller: 'timerController',
 		controllerAs: 'ctrl',
+		bindToController: true,
 		template:'<div>{{ctrl.number}}{{1+1+1}}</div>',
 	}
 }

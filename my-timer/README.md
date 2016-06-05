@@ -6,6 +6,7 @@ The main functionalities are the following :
  * possibilities to have a number timer
  * select the duratio between to step
  * choose the min max value of the timer
+ * choose if you want to have a timer in one sens or another
 
 ## Usage
 
