@@ -9,8 +9,6 @@
  angular.module('angularForm',[]);
  angular.module('angularForm')
 	.directive('angularForm', angularForm);
-	
-angular.module('angularForm')
 	.controller('angularFormController',angularFormController);
 	
 	
