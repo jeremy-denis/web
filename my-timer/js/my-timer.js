@@ -8,9 +8,7 @@
 
  angular.module('myTimer',[]);
  angular.module('myTimer')
-	.directive('myTimer', myTimer);
-	
-angular.module('myTimer')
+	.directive('myTimer', myTimer)
 	.controller('timerController',timerController);
 	
 /** The following function match to the controller of the timer directive 
@@ -23,9 +21,6 @@ function timerController($interval,$scope) {
 	vm.number = 0;
 	vm.timer;
 	vm.step = 1;
-	vm.max;
-	vm.min;
-	vm.desc;
 	
 	vm.stop = function () {
 		$interval.cancel(vm.timer);
