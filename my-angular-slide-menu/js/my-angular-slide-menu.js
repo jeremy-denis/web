@@ -8,15 +8,14 @@
  
  angular.module('myAngularSlideMenu',[]);
  angular.module('myAngularSlideMenu')
-	.directive('myAngularSlideMenu', myAngularSlideMenu);
-	
-angular.module('myAngularSlideMenu')
+	.directive('myAngularSlideMenu', myAngularSlideMenu)
 	.controller('myAngularSlideMenuController',myAngularSlideMenuController);
 	
 	
 function myAngularSlideMenuController($scope) {
 	var vm = this;
-	vm.left = false;
+	vm.animated = false;
+	vm.class='moveLeft';
 }
 	
 function myAngularSlideMenu() {
@@ -24,12 +23,13 @@ function myAngularSlideMenu() {
 		transclude:true,
 		restrict:'E',
 		scope: {
-            object: "="
+            class: "=?",
+            animated:"=?"
         },
 		controller: 'myAngularSlideMenuController',
 		controllerAs: 'ctrl',
 		bindToController:true,
-		template:'<div id="my-angular-slide-menu" ng-class="ctrl.class" ng-click="ctrl.class = \'moveLeft\'"><ng-transclude></ng-transclude></div>',
+		template:'<div id="my-angular-slide-menu" ng-class="{true:ctrl.class}[ctrl.animated]" ng-click="ctrl.animated=true;"><ng-transclude></ng-transclude>{{vm.animated}}</div>',
 	}
 }
 

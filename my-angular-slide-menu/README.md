@@ -23,7 +23,15 @@ be carefull there are a js file and a css file to include to have the property w
 
 ### attributes available
 
-for the moment no attribute
+ * animated : a boolean that apply the class when equal to true
+ * class : if you want to apply your own class to the element you can used this attributes
+
+###sample to used
+
+```html
+	<input type="checkbox" ng-model="$scope.flag"/>
+	<my-angular-slide-menu animated="$scope.flag">panel</my-angular-slide-menu>
+```
 
 ## License
 Licensed under the MIT license.
