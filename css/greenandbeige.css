@@ -1,0 +1,94 @@
+html, body {
+	background-color:#FFFFF0;
+	color:#445566;
+	text-align:center;
+	height:100%;
+}
+
+table {
+	height:100%;
+	width:100%;
+}
+
+.panel {
+	font-family:helvetica;
+	
+	background-color:#FFFFF0;
+	font-size:18pt;
+	width:50%;
+	height:100%;
+	padding:15%;
+	text-align:center;
+}
+
+.panel:hover {
+	font-size:25pt;
+}
+
+#panel1 {
+	border-right:solid #445566 2px; 
+}
+
+#slideMenu {
+	transition: all 0.8s, transform 0.8s ease;
+	height:100%;
+}
+
+
+.moveRight {
+	-ms-transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    -moz--transform: translate(0, 0);
+	transform: translate(0, 0);
+}
+
+.moveLeft {
+	transform: translate(-100%, 0);
+	-ms-transform: translate(-100%, 0);
+    -webkit-transform: translate(-100%, 0);
+    -moz--transform: translate(-100%, 0);
+}
+
+
+.displayByRight {
+	-ms-transform: translate(0, -80%);
+    -webkit-transform: translate(0, -80%);
+    -moz--transform: translate(0, -80%);
+	transform: translate(0, -80%);
+}
+
+.myIcon {
+ margin:2px;
+ cursor:pointer;
+}
+
+.left {
+	float:left;
+}
+
+.right {
+	float:right;
+}
+
+.hide {
+	display:none;
+}
+
+.myPanel {
+	padding:2px;
+}
+
+.myPanel h2 {
+	text-align:left;
+}
+
+.personalPanel {
+	border:solid #445566 2px;
+	-ms-transform: rotate(7deg);
+    -webkit-transform: rotate(7deg);
+    -moz--transform: rotate(7deg); 
+    transform: rotate(7deg);
+    text-align:left;
+    width:20%;
+    height:auto;
+}
