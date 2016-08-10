@@ -19,7 +19,7 @@ for page with only one sentence or one message.
 1 - import the file in your website
 ```
 <link rel="stylesheet" type="text/css" href="blackandwhite.css">
-
+```
 
 ## Green and beige
 
