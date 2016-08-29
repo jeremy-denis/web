@@ -55,6 +55,8 @@ There are two concepts around the object :
 #### presentation object attribute
  
  * displayNumber : the number of slide to display by default
+  if you put the value ```all``` for the display number all the slides are displayed
+  
  * slides        : an array that contain the different slide object 
 
 ## License
