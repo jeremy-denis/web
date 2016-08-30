@@ -21,9 +21,10 @@ presentation : object that contain the presentation
 ### presentation object
 
 The directive take in parameter an object that match to the presentation.
-There are two concepts around the object : 
+There are three concepts around the object : 
  * the presentation : the object itself  
  * the slide : an object that contain a list of string
+ * the item : slide show a list of item/string
  
 
 #### presentation object sample
@@ -58,6 +59,12 @@ There are two concepts around the object :
   if you put the value ```all``` for the display number all the slides are displayed
   
  * slides        : an array that contain the different slide object 
+ 
+ * titleClass : the css class apply to the title of the diapositive
+ 
+ * slideClass : the main css class apply on each slide
+ 
+ * itemClass : the css class apply to each item of the slide
 
 ## License
 Licensed under the MIT license.
