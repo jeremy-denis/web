@@ -26,11 +26,12 @@ function angularPresentationController($scope,$sce) {
 		
 		angular.forEach(vm.presentation.slides,function(list){
 			if (cpt < vm.presentation.displayNumber) {
-				vm.result += '<ul>';
+				vm.result += '<div class="'+vm.presentation.slideClass+'">';
+				vm.result += '<div class="'+vm.presentation.titleClass+'">'+list.name+'</div>';
 				angular.forEach(list.values,function(item){
-					vm.result += item;
+					vm.result += '<div class="'+vm.presentation.itemClass+'">'+item+'</div>';
 				});
-				vm.result += '</ul><hr/>';
+				vm.result += '</div>';
 				++cpt;
 			}
 		});
