@@ -8,7 +8,7 @@
  
  angular.module('angularForm',[]);
  angular.module('angularForm')
-	.directive('angularForm', angularForm);
+	.directive('angularForm', angularForm)
 	.controller('angularFormController',angularFormController);
 	
 	
@@ -19,14 +19,14 @@ function angularFormController($scope,$sce) {
 	this.init = function() {
 		vm.form = '<table>'
 		angular.forEach(vm.object, function(value, key) {
-		  vm.form += '<tr><td>'+key+' : </td>';
+		  vm.form += ['<tr><td>',key,' : </td>'].join("");
 		  if (typeof value == 'string' || !value instanceof Array) {
-				vm.form += '<td><input name="'+key+'" type="text" value="'+value+'"/></td></tr>';
+				vm.form += ['<td><input name="',key,'" type="text" value="',value,'"/></td></tr>'].join("");
 		  } else {
 			if (value instanceof Array) {
-				vm.form += '<td><select name="'+key+'">';
+				vm.form += ['<td><select name="',key,'">'].join("");
 				angular.forEach(value, function(option) {
-					vm.form += '<option value="'+option+'">'+option+'</option>';
+					vm.form += ['<option value="',option,'">',option,'</option>'].join("");
 				});
 				vm.form += '</select></td></tr>';
 			}
