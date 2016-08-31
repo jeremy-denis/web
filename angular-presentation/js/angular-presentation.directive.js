@@ -12,30 +12,49 @@
  angular.module('angularPresentation')
 	.directive('angularPresentation', angularPresentation)
 	.controller('angularPresentationController',angularPresentationController);
-	
-	
-function angularPresentationController($scope,$sce) {
+
+function angularPresentationController($scope,$sce,$interval) {
 	var vm    = this;
-	var cpt   = 0;
-	vm.result = '';
+	var currentSlide   = 0;
+	var stepLimit;
+	var promise;
+	vm.result;
 	
-	this.init = function() {
-		if (vm.presentation.displayNumber == 'all') {
-			vm.presentation.displayNumber = vm.presentation.slides.length;
+			
+	function oneStep() {
+		vm.result = '';
+		
+		stepLimit = currentSlide + vm.presentation.displayNumber;
+		
+		if (stepLimit >= vm.presentation.slides.length) {
+			$interval.cancel(vm.promise);
 		}
 		
-		angular.forEach(vm.presentation.slides,function(list){
-			if (cpt < vm.presentation.displayNumber) {
+		angular.forEach(vm.presentation.slides,function(list,key){
+			if (key >= currentSlide && currentSlide < stepLimit) {
 				vm.result += '<div class="'+vm.presentation.slideClass+'">';
 				vm.result += '<div class="'+vm.presentation.titleClass+'">'+list.name+'</div>';
 				angular.forEach(list.values,function(item){
 					vm.result += '<div class="'+vm.presentation.itemClass+'">'+item+'</div>';
 				});
 				vm.result += '</div>';
-				++cpt;
+				++currentSlide;
 			}
 		});
 		vm.result = $sce.trustAsHtml(vm.result);
+	}	
+	
+	
+	
+	this.init = function() {
+		if (vm.presentation.displayNumber == 'all') {
+			vm.presentation.displayNumber = vm.presentation.slides.length;
+		}
+		
+		if (vm.presentation.delay != undefined) {
+			vm.promise = $interval(oneStep,vm.presentation.delay);
+		}
+		oneStep();
 	}
 	
 	this.init();

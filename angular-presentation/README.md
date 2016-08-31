@@ -5,6 +5,7 @@ The angular-presentation directive allow you to display slide on a json object
 The main functionalities are the following :
  * display a presentation based on an object 
  * choose the number of slide to display
+ * choose the delay between each slide displaying
  
 ## Usage
 
@@ -31,7 +32,11 @@ There are three concepts around the object :
 
 ```json
  {
-	"displayNumber":"2",
+	"displayNumber":1,
+	"titleClass":"slideTitle",
+	"slideClass":"red",
+	"itemClass":"blue",
+	"delay":"1000",
 	"slides":[
 		{
 		 "name":"slide1",
@@ -65,6 +70,8 @@ There are three concepts around the object :
  * slideClass : the main css class apply on each slide
  
  * itemClass : the css class apply to each item of the slide
+ 
+ * delay : number of millisecond before to go to the next slide
 
 ## License
 Licensed under the MIT license.
