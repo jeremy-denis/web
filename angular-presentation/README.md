@@ -69,7 +69,7 @@ There are three concepts around the object :
  
  * slideClass : the main css class apply on each slide
  
- * itemClass : the css class apply to each item of the slide
+ * itemClass : the container of each item of the slide(a class item is apply to each `item`)
  
  * delay : number of millisecond before to go to the next slide
 
