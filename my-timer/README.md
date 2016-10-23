@@ -1,6 +1,6 @@
 # web/my-timer
-Angular Timer directive.
-Tht my-timer directive allow you to manipulate the time in a very easy way.
+Angular Timer component.
+The my-timer component allow you to manipulate the time in a very easy way.
 
 The main functionalities are the following :
  * possibilities to have a number timer
@@ -10,7 +10,7 @@ The main functionalities are the following :
 
 ## Usage
 
-### Element directive
+### Component
 
 ```html
  <my-timer></my-timer>
@@ -35,6 +35,12 @@ desc     : if the desc attributes is equal to true it will doing a reversing tim
 ```html
  <my-timer min="5" max="10"></my-timer>
 ```
+
+### event launch
+
+The component launch some event on the rootScope which can be recover : 
+
+timerStop : event send when the timer is stop
 
 ## License
 Licensed under the MIT license.
