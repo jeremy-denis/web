@@ -16,7 +16,7 @@
  * @param $interval : injection of the interval service for increment the timer
  * @param scope : 
  */
-function timerController($interval,$scope) {
+function timerController($interval,$scope,$rootScope) {
 	var vm = this;
 	vm.number = 0;
 	vm.timer;
@@ -24,11 +24,11 @@ function timerController($interval,$scope) {
 	
 	vm.stop = function () {
 		$interval.cancel(vm.timer);
+		$rootScope.$emit('timerStop');
 	}
 	
 	this.stepTime = function ($scope) {
 		vm.number += vm.step;
-		console.log(vm.number);
 	
 		if (isNaN(vm.number)) {
 			vm.stop();
