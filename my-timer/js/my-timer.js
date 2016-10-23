@@ -28,7 +28,12 @@ function timerController($interval,$scope) {
 	
 	this.stepTime = function ($scope) {
 		vm.number += vm.step;
-
+		console.log(vm.number);
+	
+		if (isNaN(vm.number)) {
+			vm.stop();
+		}
+		
 		if (vm.max != undefined && vm.max <= vm.number) {
 			vm.number = vm.max;
 			vm.stop();
