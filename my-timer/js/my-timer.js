@@ -6,10 +6,23 @@
  * @version 0.1
  */
 
+/** The following function match to the timer component itself 
+ * @constructor
+ */	
  angular.module('myTimer',[]);
  angular.module('myTimer')
-	.directive('myTimer', myTimer)
-	.controller('timerController',timerController);
+	.component('myTimer',{
+		bindings: {
+            duration: "@duration",
+            min: "=?",
+            max: "=?",
+			step: "=?",
+			desc: "=?"
+		},
+		controller:timerController,
+		controllerAs:'ctrl',
+		template:'<div>{{ctrl.number}}</div>'
+	});
 	
 /** The following function match to the controller of the timer directive 
  * @constructor
@@ -69,25 +82,5 @@ function timerController($interval,$scope,$rootScope) {
 	}
 	
 	this.init();
-}
-
-/** The following function match to the timer directive itself 
- * @constructor
- */	
-function myTimer($interval) {
-	return {
-		replace:true,
-		scope: {
-            duration: "@duration",
-            min: "=?",
-            max: "=?",
-			step: "=?",
-			desc: "=?"
-        },
-		controller: 'timerController',
-		controllerAs: 'ctrl',
-		bindToController: true,
-		template:'<div>{{ctrl.number}}{{1+1+1}}</div>',
-	}
 }
 
