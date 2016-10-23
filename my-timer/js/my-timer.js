@@ -45,7 +45,7 @@ function timerController($interval,$scope,$rootScope) {
 		}
 	}
 	
-	this.init = function() {
+	this.init = function() {		
 		if (vm.duration == undefined) {
 			vm.duration = 1000;
 		}
@@ -60,7 +60,7 @@ function timerController($interval,$scope,$rootScope) {
 			}
 			vm.step *= -1;
 		}
-
+	
 		this.timer = $interval(this.stepTime, vm.duration);
 		
 		$scope.$on('$destroy', function() {
@@ -79,10 +79,10 @@ function myTimer($interval) {
 		replace:true,
 		scope: {
             duration: "@duration",
-            min: "=",
-            max: "=",
-			step: "=",
-			desc: "="
+            min: "=?",
+            max: "=?",
+			step: "=?",
+			desc: "=?"
         },
 		controller: 'timerController',
 		controllerAs: 'ctrl',
