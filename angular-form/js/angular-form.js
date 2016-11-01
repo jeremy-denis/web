@@ -8,9 +8,14 @@
  
  angular.module('angularForm',[]);
  angular.module('angularForm')
-	.directive('angularForm', angularForm)
-	.controller('angularFormController',angularFormController);
-	
+	.component('angularForm',{
+		bindings: {
+            object: "=?"
+		},
+		controller:angularFormController,
+		controllerAs:'ctrl',
+		template:'<div ng-bind-html="ctrl.form"></div>'
+	});
 	
 function angularFormController($scope,$sce) {
 	var vm = this;
@@ -37,19 +42,5 @@ function angularFormController($scope,$sce) {
 	}
 	
 	this.init();
-}
-	
-function angularForm() {
-	return {
-		replace:true,
-		restrict:'E',
-		scope: {
-            object: "="
-        },
-		controller: 'angularFormController',
-		controllerAs: 'ctrl',
-		bindToController:true,
-		template:'<div ng-bind-html="ctrl.form"></div>',
-	}
 }
 

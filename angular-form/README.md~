@@ -1,5 +1,5 @@
 # web/angular-form
-Angular form component take an object and generate a form to manipulate the object
+Angular directive that take an object and generate a form to manipulate the object
 
 The main functionalities are the following :
  * possibilities to have a basic form with text field
@@ -18,7 +18,7 @@ The main functionalities are the following :
 
 object : the object pass to the directive to generate the form
 
-#### form usage sample by passing an object
+#### duration sample 
 
 ```html
  <angular-form object="ctrl.obj"></my-timer>
