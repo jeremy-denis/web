@@ -1,0 +1,9 @@
+ <div class="playIcon">
+	<ion-icon *ngIf="!inPause" name="pause" (click)="this.pause()"></ion-icon>
+	<ion-icon *ngIf="inPause" name="play" (click)="this.pause()"></ion-icon>
+ </div>
+ <div class="runTitle">
+	{{label}} {{id}}
+ </div>
+ <br/>
+ <progress id="avancement" value="{{value}}" max="{{maxTime}}"></progress>
