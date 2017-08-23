@@ -1,5 +1,5 @@
 # web/progress-time
-A small angular 4 typescript component to manage and display progress time
+An angular 4 typescript component to manage and display progress bar.
 
 The main functionalities are the following :
  * display progress time 
@@ -15,9 +15,9 @@ The main functionalities are the following :
 
 ### attributes available
 
-id : the if of the element
-label : the label display before the progress time
-maxTime : the time associated to the progress bar
+ * id : the if of the element
+ * label : the label display before the progress time
+ * maxTime : the time associated to the progress bar
 
 ## License
 Licensed under the MIT license.
