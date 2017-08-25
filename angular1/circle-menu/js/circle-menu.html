@@ -1,0 +1,11 @@
+<div class="circular-menu">
+  <div class="menu-button" ng-click="$ctrl.open()">
+	  <div ng-show="!$ctrl.opened">+</div>  
+	  <div ng-show="$ctrl.opened">-</div>  
+  </div>
+  <div class="circle" ng-class="{'open':$ctrl.opened}">
+	<div ng-repeat="item in $ctrl.items track by $index">
+		<div class="oneLink" ng-click="$ctrl.launchEvent(undefined,item.event)" style="top:{{$ctrl.posItems[$index].top}}; left:{{$ctrl.posItems[$index].left}}; "><i class="icon {{item.icon}}"></i></div>
+	</div>
+  </div>
+</div>

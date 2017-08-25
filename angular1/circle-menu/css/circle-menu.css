@@ -1,0 +1,67 @@
+.circular-menu {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;   
+  position: relative;
+}
+
+.circle {
+
+  width: 250px;
+  height: 250px;
+  opacity: 0;
+  
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  transform: scale(0);
+
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+.open.circle {
+  opacity: 1;
+
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  transform: scale(1);
+}
+
+.circle .oneLink:hover, .circle .drag-enter {
+	background:#0c60ee !important;
+	opacity:0.8;
+}
+
+.circle .oneLink {
+  background: rgb(42, 201, 170);
+  border-radius: 50%;
+  width: 50px;
+  line-height:50px;
+  height: 50px;
+
+  color: white;
+  text-align: center;
+  font-size:20pt;
+  position:absolute;
+  
+  z-index:-1 !important;
+}
+
+.menu-button {
+  text-align: center;
+  z-index:99;
+  color: white;
+  font-size:24pt;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  height: 60px;
+  line-height:60px;
+  width: 60px;
+  position:absolute;
+  
+  top: calc(50%);
+  left: calc(50%);
+  background:rgb(42, 201, 170);
+}
+
