@@ -9,14 +9,22 @@ import { Events } from 'ionic-angular';
 })
 
 export class ProgressTimeComponent {
+	//id of the progress bar time
 	@Input() id;
+	
+	//label display above the progress bar
 	@Input() label;	
+	
+	// when it reach by the chrono an alert is throw
 	@Input() maxTime;
 	value;
 	updateEach;
 	inPause;
 
+	//the chrono launch when the component is instanciated
     private timer;
+    
+    //the event subscription
     private sub: Subscription;
 	
 	updateTime(ticks): void {
