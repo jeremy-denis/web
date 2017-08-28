@@ -29,6 +29,8 @@ have moment.js install
 		** positive = day after the expiration date
 		** negative = day before the expiration date
 	* apply : more, less or equal the rule that will be validated by the element
+	
+/!\ rules can be ordered the last rule validated is the one used by the component
   
 ### rules sample 
 

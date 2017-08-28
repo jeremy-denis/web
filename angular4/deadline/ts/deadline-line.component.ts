@@ -38,7 +38,6 @@ export class DeadLineLineComponent implements OnInit {
 		}
 		
 		this.rules.forEach(oneRule => {
-			if (keepLoop) {
 				switch (oneRule.apply) {
 					case 'more':
 					  if (this.dayDiff > oneRule.day){
@@ -65,9 +64,7 @@ export class DeadLineLineComponent implements OnInit {
 					  }
 					break;
 				}
-			}
 		});
-		
 		return returnClass;
 	}
 	
