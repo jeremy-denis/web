@@ -13,16 +13,62 @@ import moment from 'moment';
 
 export class DeadLineLineComponent implements OnInit {
 	@Input() obj;
+	@Input() rules;
 	now;
 	dayDiff;
+	checked;
 	
 	ngOnInit() {
+		this.checked = false;
 		let mom = moment.utc(this.obj.date);
 		let day = mom.format('D');
 		
 		this.now = moment();
 		let currDay = this.now.format('D');
-		this.dayDiff = Math.round(this.now.diff(mom,'days',true));
+		this.dayDiff = Math.round(this.now.diff(mom,'days',true)); 
+	}
+	
+	getDateClass() {
+		let returnClass = '';
+		let cpt   = 0;
+		let keepLoop = true;		
+		
+		if (this.obj.date == undefined || this.checked || this.rules == undefined) {
+			return 'grey';
+		}
+		
+		this.rules.forEach(oneRule => {
+			if (keepLoop) {
+				switch (oneRule.apply) {
+					case 'more':
+					  if (this.dayDiff > oneRule.day){
+					    returnClass = oneRule.class;
+						keepLoop = false;
+					  }
+					break;
+					case 'less':
+					  if (this.dayDiff < oneRule.day){
+					    returnClass = oneRule.class;
+						keepLoop = false;
+					  }
+					break;
+					case 'equal':
+					  if (this.dayDiff == oneRule.day){
+					    returnClass = oneRule.class;
+						keepLoop = false;
+					  }
+					break;
+					default:
+					  if (this.dayDiff > oneRule.day){
+					    returnClass = oneRule.class;
+						keepLoop = false;
+					  }
+					break;
+				}
+			}
+		});
+		
+		return returnClass;
 	}
 	
 	confirmDelete() {

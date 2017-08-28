@@ -8,16 +8,6 @@ The main functionalities are the following :
 
 have moment.js install
 
-## class with time
-
- * 'red' : (dayDiff > 0 && dayDiff < 7),
- * 'orange' : (dayDiff == 0),
- * 'yellow' : (dayDiff < 0 && dayDiff >= -7),
- * 'darkgreen' : (dayDiff < -7 && dayDiff >= -30),
- * 'green' : (dayDif < -30 && dayDiff > -90),
- * 'white' : (dayDiff < -90),'darkred' : (dayDiff > 7),
- * 'grey' : (obj.date == undefined || checked)}"
-
 ## Usage
 
 ### Element directive
@@ -28,7 +18,32 @@ have moment.js install
 
 ### attributes available
 
- * object : an object that should contain name and date column to be displayed in the component
+ * obj : an object that should contain three columns : name, date and rules
+  ** name : the name of the object display in the component
+  ** date : expiration date of the object 
+  
+ * rules : an array that contain the rules of displaying if the object
+	Each rules should have the following column
+	* class : the class apply if the rule is validated
+	* day : the day of difference with the object date 
+		** positive = day after the expiration date
+		** negative = day before the expiration date
+	* apply : more, less or equal the rule that will be validated by the element
+  
+### rules sample 
+
+
+```json
+[
+	{'class' :'darkred', 'day' : 7, 'apply':'more'},
+	{'class' :'red', 'day' : 7, 'apply':'less'},
+	{'class' :'orange', 'day' : 0, 'apply':'equal'},
+	{'class' :'yellow', 'day' : -7,'apply':'more'},
+	{'class' :'darkgreen', 'day' : -30,'apply':'more'}, 
+	{'class' :'green', 'day' : -90,'apply':'more'},
+	{'class' :'white', 'day' : -90,'apply':'less'},
+]
+```
 
 ## License
 Licensed under the MIT license.

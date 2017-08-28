@@ -1,4 +1,4 @@
-<div class="oneLine" [ngClass]="{'red' : (dayDiff > 0 && dayDiff < 7), 'orange' : (dayDiff == 0), 'yellow' : (dayDiff < 0 && dayDiff >= -7), 'darkgreen' : (dayDiff < -7 && dayDiff >= -30), 'green' : (dayDif < -30 && dayDiff > -90),'white' : (dayDiff < -90),'darkred' : (dayDiff > 7), 'grey' : (obj.date == undefined || checked)}">
+<div class="oneLine" class="{{getDateClass()}}">
  <div class="right">
    <button ion-button icon-only (click)="confirmDelete()">
 	<ion-icon name="close"></ion-icon>	
