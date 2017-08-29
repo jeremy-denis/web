@@ -1,3 +1,11 @@
+/** Progress time component
+ * @file 15/08/2017
+ * @author Jérémy DENIS
+ * @descrition : component that display a managable progress bar
+ * @license MIT
+ * @version 1.0
+ */
+ 
 import { Component, Input } from '@angular/core';
 import { Observable, Subscription } from 'rxjs/Rx';
 

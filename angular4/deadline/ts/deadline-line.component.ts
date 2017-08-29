@@ -1,3 +1,11 @@
+/** deadline component
+ * @file 15/08/2017
+ * @author Jérémy DENIS
+ * @descrition component that degrardated with time
+ * @license MIT
+ * @version 1.0
+ */
+ 
 import { Component, Input } from '@angular/core';
 import { Observable, Subscription } from 'rxjs/Rx';
 import { OnInit } from '@angular/core';

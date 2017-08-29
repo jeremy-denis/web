@@ -1,3 +1,10 @@
+/** circle menu
+ * @file 01/08/2017
+ * @author Jérémy DENIS
+ * @descrition menu display in circle around a button
+ * @license MIT
+ * @version 1.0
+ */
 (function() {
     'use strict';
     

@@ -1,9 +1,9 @@
-/** angular form directive
+/** angular form component
  * @file 06/05/2016
  * @author Jérémy DENIS
- * @descrition
+ * @descrition component that change a standard json into a form component
  * @license MIT
- * @version 0.1
+ * @version 1.0
  */
  
  angular.module('angularForm',[]);
