@@ -1,5 +1,5 @@
 # web/circle-menu
-Circle Menu component. Can simulate fap button.
+Circle Menu component is a component that can simulate a fap button.
 The circle-menu component purpose a dynamic circular menu with event launch when item is click.
  
 ## Usage
