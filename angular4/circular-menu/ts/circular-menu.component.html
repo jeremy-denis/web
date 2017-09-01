@@ -1,0 +1,11 @@
+<div class="circular-menu">
+  <div class="menu-button" (click)="open()">
+	  <div *ngIf="!opened">+</div>  
+	  <div *ngIf="opened">-</div>  
+  </div>
+  <div class="circle" [ngClass]="{'open':opened}">
+	<div *ngFor="let item of items; let $index = index;">
+		<button [style.top]="posItems[$index].top" [style.left]="posItems[$index].left" class="oneLink" (click)="launchEvent(undefined,item.event)"><ion-icon name="{{item.icon}}"></ion-icon></button>
+	</div>
+  </div>
+</div>

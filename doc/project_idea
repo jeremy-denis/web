@@ -1,0 +1,46 @@
+angular theme
+ * possibilite de choisir un theme :  directive
+animation json
+
+navigateur de web service
+angular-form
+ V formulaire a partir d'un json
+ V si attribut egal array genere select 
+ * choisir le type d'input
+ * manipuler le css du formulaire
+ * validation
+angular i18n
+ * possibilite de changer local au runtime
+angular-timer
+ V interval avec changement de chiffre
+ V debut et fin 
+ V step  
+ V duree
+ * manipuler design du timer
+ * format du timer
+ V avant et arriere
+ * boutton pour controller intégrer
+ * possibilite de recupere la valeur
+ * possibilite d'avoir un décompte depuis une date donnée
+ng-controlable
+ * a true permet d'etre controler a la souris
+ * a true permet de controller au clavier (choix clavier ou souris)
+ng-browser
+ * afficher code source d'une page
+ * Paln d'un site automatique
+ * Possibilite de masqer des element du site facilement
+ * recherche mot clé dans une page
+ * recherche mot clé dans un site
+ * analyse dynamique
+angular-open/close
+ * possibilité d'ouvrir un élément de l ecran / de le fermer
+ * extenseur / minimiseur d'element a l'ecran
+Minifieur de web
+ * HTML
+ * CSS
+ * JAvascript
+CSS 
+ V Noir avec text blanc au centre
+ * site cv
+
+
