@@ -1,6 +1,7 @@
 # web/card-map
-A component to display a map of element in card format
- 
+A component to display a map of element in different cards.
+EAch card represent a button you can tap to launch an event and treat in in another place in the application
+
 ## Usage
 
 ### Preriquisis
