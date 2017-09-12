@@ -20,6 +20,10 @@ export class CardMapComponent implements OnInit {
 		}
 	}
 	
+	launchEvent($data) {
+		this.events.publish('runViewed', $data);
+	}
+	
 	ngOnInit(): void {
 		this.init();
     }
