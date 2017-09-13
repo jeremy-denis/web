@@ -1,12 +1,4 @@
-/** Progress time component
- * @file 15/08/2017
- * @author Jérémy DENIS
- * @descrition : component that display a managable progress bar
- * @license MIT
- * @version 1.0
- */
- 
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs/Rx';
 
 import { Events } from 'ionic-angular';
@@ -16,34 +8,30 @@ import { Events } from 'ionic-angular';
   templateUrl: 'progress-time.component.html',
 })
 
-export class ProgressTimeComponent {
-	//id of the progress bar time
-	@Input() id;
-	
-	//label display above the progress bar
-	@Input() label;	
-	
-	// when it reach by the chrono an alert is throw
+export class ProgressTimeComponent implements OnInit {
+	@Input() id?;
+	@Input() label?;	
+	@Input() noControl?;	
+	@Input() autoStart?;	
 	@Input() maxTime;
 	value;
 	updateEach;
 	inPause;
+	time;
 
-	//the chrono launch when the component is instanciated
     private timer;
-    
-    //the event subscription
     private sub: Subscription;
 	
 	updateTime(ticks): void {
 		this.value += 1;
+		
 		if (this.value >= this.maxTime) {
 			this.end();
 			this.postpone();
 		}
     }
     
-    pause() {
+    pause() {console.log('PAAAUSSSSE');
 		this.inPause = !this.inPause;
 		if (this.sub == undefined) {
 			this.timer   = Observable.timer(1000,1000);
@@ -51,6 +39,17 @@ export class ProgressTimeComponent {
 		} else {
 			this.end();
 			this.sub = undefined;
+		}
+    }
+    
+    ngOnInit(): void {
+		this.inPause = false;
+		this.value   = 0;
+		this.timer   = Observable.timer(1000,1000);
+		this.sub     = this.timer.subscribe(t => this.updateTime(t));
+		if (this.autoStart) {
+			this.pause();
+			this.pause();
 		}
     }
     
@@ -63,10 +62,9 @@ export class ProgressTimeComponent {
     }
     
     constructor(public events: Events) {
-		this.inPause = false;
-		this.value   = 0;
-		this.timer   = Observable.timer(1000,1000);
-		this.sub     = this.timer.subscribe(t => this.updateTime(t));
+		this.events.subscribe('progressPause', eventData => { 
+			this.pause();
+		});
     }
 }
 
