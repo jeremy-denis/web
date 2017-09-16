@@ -3,12 +3,10 @@
   height: 250px;
   position: relative;
   width:100%;
-  padding-left: calc(50% - 135px);
-  margin-top:120px;
+  margin-top:30%;
 }
 
 .circle {
-
   width: 250px;
   height: 250px;
   opacity: 0;
@@ -64,6 +62,6 @@
   position:absolute;
   
   top: calc(50% - 14px);
-  left: calc(50% - 16px);
+  left: calc(120px);
   background:#196f3d;
 }

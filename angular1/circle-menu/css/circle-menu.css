@@ -1,12 +1,12 @@
 .circular-menu {
   width: 250px;
   height: 250px;
-  margin: 0 auto;   
   position: relative;
+  width:100%;
+  margin-top:30%;
 }
 
 .circle {
-
   width: 250px;
   height: 250px;
   opacity: 0;
@@ -29,16 +29,17 @@
 }
 
 .circle .oneLink:hover, .circle .drag-enter {
-	background:#0c60ee !important;
+	background:rgb(42, 201, 170) !important;
 	opacity:0.8;
 }
 
 .circle .oneLink {
-  background: rgb(42, 201, 170);
+  background: #196f3d;
   border-radius: 50%;
   width: 50px;
-  line-height:50px;
+  line-height:55px;
   height: 50px;
+  padding-left: 8px;
 
   color: white;
   text-align: center;
@@ -60,8 +61,7 @@
   width: 60px;
   position:absolute;
   
-  top: calc(50%);
-  left: calc(50%);
-  background:rgb(42, 201, 170);
+  top: calc(50% - 14px);
+  left: calc(120px);
+  background:#196f3d;
 }
-
