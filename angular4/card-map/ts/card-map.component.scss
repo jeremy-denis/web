@@ -6,14 +6,20 @@
     height: 30px;
     text-align: center;
     line-height: 25px;
-    background: white;
+    background: #239b56 !important;
+    color: white !important;
     border-radius: 5px;
-    border: solid #239b56 1px;
     float: left;
     margin-right: 12px;
     position:relative;
+    font-weight:bold;
 }
 
 .clear {
 	clear:both;
+}
+
+
+.disabled {
+	background:#666 !important;
 }

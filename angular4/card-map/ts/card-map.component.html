@@ -1,4 +1,4 @@
-<button ion-button *ngFor="let tour of tours; let $index = index;" (click)="this.launchEvent($index)" class="oneCard">
+<button ion-button *ngFor="let tour of tours; let $index = index;" (click)="this.launchEvent($index)" class="oneCard" [ngClass]="{'disabled' : ($index < active)}">
 	{{$index}}
 </button>
 <div class="clear"></div>
