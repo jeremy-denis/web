@@ -11,16 +11,19 @@ export class CardMapComponent implements OnInit {
 	@Input() leng:any;
 	@Input() active:any;
 	tours;
+	selected;
 	
 	init() {
 		this.tours = [];
-		let cpt = 0;
+		let cpt       = 0;
+		this.selected = 0;
 		for (cpt;cpt < this.leng;cpt++) {
 			this.tours.push({});
 		}
 	}
 	
 	launchEvent($data) {
+		this.selected = $data;
 		this.events.publish('runViewed', $data);
 	}
 	
