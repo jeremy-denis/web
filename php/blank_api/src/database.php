@@ -2,10 +2,10 @@
 class Database{
  
     // specify your own database credentials
-    private $host = "localhost";
-    private $db_name = "cactuspro";
-    private $username = "test";
-    private $password = "test";
+    private $host = "";
+    private $db_name = "";
+    private $username = "";
+    private $password = "";
     public  $db;
     
     public function __construct()
