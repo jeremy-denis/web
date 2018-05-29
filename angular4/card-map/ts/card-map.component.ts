@@ -11,15 +11,11 @@ export class CardMapComponent implements OnInit {
 	@Input() leng:any;
 	@Input() active:any;
 	tours;
-	selected;
+	selected = 0;
 	
-	init() {
-		this.tours = [];
-		let cpt       = 0;
-		this.selected = 0;
-		for (cpt;cpt < this.leng;cpt++) {
-			this.tours.push({});
-		}
+	init(nbCard) {
+		this.tours = new Array(nbCard);
+		this.tours.fill({});
 	}
 	
 	launchEvent($data) {
@@ -28,11 +24,9 @@ export class CardMapComponent implements OnInit {
 	}
 	
 	ngOnInit(): void {
-		this.init();
+		this.init(this.leng);
     }
     
-    constructor(public events: Events) {
-		
-    }
+    constructor(public events: Events) {}
 }
 
